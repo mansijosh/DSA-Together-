@@ -1,0 +1,26 @@
+//Given a matrix(2D array) M of size N*N consisting of 0s and 1s only. The task is to find the column with maximum number of 0s. If more than one column exists, print the one which comes first.
+If the maximum number of 0s is 0 then return -1.
+
+//User function Template for Java
+
+class Solution
+{
+    int columnWithMaxZeros(int arr[][], int n)
+    {
+        // code here 
+        int col = -1;
+        int max = 0;
+        
+        for(int i=0;i<n;i++){
+            int zero = 0;
+            for(int j=0;j<n;j++){
+                if(arr[j][i] == 0) zero++;
+            }
+            if(zero > max){
+                max = zero;
+                col = i;
+            }
+        }
+        return col;
+    }
+}
